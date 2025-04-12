@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StudyMaterialCBSEActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/top_dark_curve_view">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+        <TextView
+            android:id="@+id/ivHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="CBSE"/>
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+            <LinearLayout
+                android:id="@+id/tamilmedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_corner_background">
+                <TextView
+                    android:id="@+id/tvPrLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Standard  6"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practise_ques"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/seventh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_corner_background">
+                <TextView
+                    android:id="@+id/tvStd7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Standard  7"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:id="@+id/ivst7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practise_ques"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/eight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_corner_background">
+                <TextView
+                    android:id="@+id/tvStd8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Standard  8"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:id="@+id/ivst8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practise_ques"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/nineth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_corner_background">
+                <TextView
+                    android:id="@+id/tvStd9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Standard  9"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:id="@+id/ivst9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practise_ques"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/tenth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_corner_background">
+                <TextView
+                    android:id="@+id/tvStd10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Standard  10"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:id="@+id/ivst710"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practise_ques"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/eleventh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_corner_background">
+                <TextView
+                    android:id="@+id/tvStd11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Standard  11"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:id="@+id/ivst11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practise_ques"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/twelth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/round_corner_background">
+                <TextView
+                    android:id="@+id/tvStd12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Standard  12"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:id="@+id/ivst12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_practise_ques"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

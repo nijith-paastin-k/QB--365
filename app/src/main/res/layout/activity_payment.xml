@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.register.PaymentActivity">
+
+    <ScrollView
+        android:id="@+id/paymentMethodScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scrollViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:background="@drawable/top_dark_curve_view"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_back"
+                    android:padding="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/headingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Payment Method"
+                    android:textSize="24sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scrollConstraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                app:layout_constraintTop_toBottomOf="@id/layout1">
+
+                <EditText
+                    android:id="@+id/edtTxtCouponCode"
+                    android:layout_width="250dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/round_corner_background"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="Have coupon code?"
+                    android:paddingStart="15dp"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btnApply"
+                    app:layout_constraintEnd_toStartOf="@id/btnApply"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/btnApply" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnApply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/button_round_back"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Apply"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/edtTxtCouponCode"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/labelSelectPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Payment Method and Continue"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textColor="#777986"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins_regular"
+                    app:layout_constraintTop_toBottomOf="@id/edtTxtCouponCode"/>
+
+                <RelativeLayout
+                    android:id="@+id/horizontalScrollView"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/labelSelectPlan">
+
+                    <HorizontalScrollView
+                        android:id="@+id/paymentPlanScroll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:scrollbars="none"
+                        android:layout_centerHorizontal="true"
+                        android:fillViewport="true">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardPaymentPlan1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginStart="15dp"
+                                app:cardBackgroundColor="#F3F4F8"
+                                android:outlineProvider="none"
+                                app:cardCornerRadius="15dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="230dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="15dp">
+
+                                    <TextView
+                                        android:id="@+id/tvPlanDays1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:text="90 Days"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/plan1OldPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/plan1_price_strike"
+                                        android:textSize="12sp"
+                                        android:layout_marginStart="-3dp"
+                                        android:textColor="@color/black"
+                                        android:fontFamily="@font/poppins_medium"
+                                        app:layout_constraintStart_toStartOf="@id/plan1NewPrice"
+                                        app:layout_constraintTop_toTopOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan1NewPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="1250 INR"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1OldPrice"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan1bullet1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1NewPrice"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan1Text1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:text="1500+ MCQ Tests"
+                                        android:textSize="12sp"
+                                        android:layout_marginTop="-3dp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan1bullet1"
+                                        app:layout_constraintTop_toTopOf="@id/plan1bullet1"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan1bullet2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1Text1"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan1Text2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Unlimited Practice (10000+ Questions with Answer Per Subject)"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintStart_toEndOf="@id/plan1bullet2"
+                                        app:layout_constraintTop_toTopOf="@id/plan1bullet2"
+                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan1bullet3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1Text2"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan1Text3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Important Notes (Chapter Wise)"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan1bullet3"
+                                        app:layout_constraintTop_toTopOf="@id/plan1bullet3"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan1bullet4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1Text3"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan1Text4"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Previous Year papers"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan1bullet4"
+                                        app:layout_constraintTop_toTopOf="@id/plan1bullet4"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan1bullet5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1Text4"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan1Text5"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Study plan"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan1bullet5"
+                                        app:layout_constraintTop_toTopOf="@id/plan1bullet5"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan1bullet6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1Text5"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan1Text6"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="NCERT, HOT, Value Based, Delhi and More Extra Questions"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan1bullet6"
+                                        app:layout_constraintTop_toTopOf="@id/plan1bullet6"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan1bullet7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1Text6"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan1Text7"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="1500+ Sample Papers"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan1bullet7"
+                                        app:layout_constraintTop_toTopOf="@id/plan1bullet7"/>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnBuyPlan1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginTop="25dp"
+                                        android:background="@drawable/button_round_back"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:text="Buy Now"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white"
+                                        android:textSize="13sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/plan1Text7"/>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardPaymentPlan2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="15dp"
+                                app:cardBackgroundColor="#F3F4F8"
+                                android:outlineProvider="none"
+                                app:cardCornerRadius="15dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="230dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="15dp">
+
+                                    <TextView
+                                        android:id="@+id/tvPlanDays2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:text="180 Days"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/plan2OldPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/plan2_price_strike"
+                                        android:textSize="12sp"
+                                        android:layout_marginStart="-3dp"
+                                        android:textColor="@color/black"
+                                        android:fontFamily="@font/poppins_medium"
+                                        app:layout_constraintStart_toStartOf="@id/plan2NewPrice"
+                                        app:layout_constraintTop_toTopOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan2NewPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="1750 INR"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2OldPrice"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan2bullet1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2NewPrice"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan2Text1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:text="1500+ MCQ Tests"
+                                        android:textSize="12sp"
+                                        android:layout_marginTop="-3dp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan2bullet1"
+                                        app:layout_constraintTop_toTopOf="@id/plan2bullet1"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan2bullet2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2Text1"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan2Text2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Unlimited Practice (10000+ Questions with Answer Per Subject)"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintStart_toEndOf="@id/plan2bullet2"
+                                        app:layout_constraintTop_toTopOf="@id/plan2bullet2"
+                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan2bullet3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2Text2"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan2Text3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Important Notes (Chapter Wise)"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan2bullet3"
+                                        app:layout_constraintTop_toTopOf="@id/plan2bullet3"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan2bullet4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2Text3"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan2Text4"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Previous Year papers"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan2bullet4"
+                                        app:layout_constraintTop_toTopOf="@id/plan2bullet4"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan2bullet5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2Text4"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan2Text5"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Study plan"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan2bullet5"
+                                        app:layout_constraintTop_toTopOf="@id/plan2bullet5"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan2bullet6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2Text5"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan2Text6"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="NCERT, HOT, Value Based, Delhi and More Extra Questions"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan2bullet6"
+                                        app:layout_constraintTop_toTopOf="@id/plan2bullet6"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan2bullet7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2Text6"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan2Text7"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="1500+ Sample Papers"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan2bullet7"
+                                        app:layout_constraintTop_toTopOf="@id/plan2bullet7"/>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnBuyPlan2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginTop="25dp"
+                                        android:background="@drawable/button_round_back"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:text="Buy Now"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white"
+                                        android:textSize="13sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/plan2Text7"/>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardPaymentPlan3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="15dp"
+                                app:cardBackgroundColor="#F3F4F8"
+                                android:outlineProvider="none"
+                                app:cardCornerRadius="15dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="230dp"
+                                    android:layout_height="wrap_content"
+                                    android:padding="15dp">
+
+                                    <TextView
+                                        android:id="@+id/tvPlanDays3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:text="365 Days"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/plan3OldPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/plan3_price_strike"
+                                        android:textSize="12sp"
+                                        android:layout_marginStart="-3dp"
+                                        android:textColor="@color/black"
+                                        android:fontFamily="@font/poppins_medium"
+                                        app:layout_constraintStart_toStartOf="@id/plan3NewPrice"
+                                        app:layout_constraintTop_toTopOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan3NewPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:text="2750 INR"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3OldPrice"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan3bullet1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="20dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3NewPrice"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan3Text1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:text="1500+ MCQ Tests"
+                                        android:textSize="12sp"
+                                        android:layout_marginTop="-3dp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan3bullet1"
+                                        app:layout_constraintTop_toTopOf="@id/plan3bullet1"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan3bullet2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3Text1"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan3Text2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Unlimited Practice (10000+ Questions with Answer Per Subject)"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintStart_toEndOf="@id/plan3bullet2"
+                                        app:layout_constraintTop_toTopOf="@id/plan3bullet2"
+                                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan3bullet3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3Text2"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan3Text3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Important Notes (Chapter Wise)"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan3bullet3"
+                                        app:layout_constraintTop_toTopOf="@id/plan3bullet3"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan3bullet4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3Text3"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan3Text4"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Previous Year papers"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan3bullet4"
+                                        app:layout_constraintTop_toTopOf="@id/plan3bullet4"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan3bullet5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3Text4"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan3Text5"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="Study plan"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan3bullet5"
+                                        app:layout_constraintTop_toTopOf="@id/plan3bullet5"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan3bullet6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3Text5"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan3Text6"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="NCERT, HOT, Value Based, Delhi and More Extra Questions"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan3bullet6"
+                                        app:layout_constraintTop_toTopOf="@id/plan3bullet6"/>
+
+                                    <ImageView
+                                        android:id="@+id/plan3bullet7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:src="@drawable/ic_right_bullet_vector"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3Text6"
+                                        app:layout_constraintStart_toStartOf="parent"/>
+
+                                    <TextView
+                                        android:id="@+id/plan3Text7"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginStart="7dp"
+                                        android:layout_marginTop="-3dp"
+                                        android:text="1500+ Sample Papers"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/poppins_regular"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toEndOf="@id/plan3bullet7"
+                                        app:layout_constraintTop_toTopOf="@id/plan3bullet7"/>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnBuyPlan3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginTop="25dp"
+                                        android:background="@drawable/button_round_back"
+                                        android:fontFamily="@font/poppins_medium"
+                                        android:text="Buy Now"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/white"
+                                        android:textSize="13sp"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/plan3Text7"/>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtOtherPaymentMethods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Other Payment Methods"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBankTransfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="#F3F4F8"
+                    android:outlineProvider="none"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/txtOtherPaymentMethods">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/icBankTransfer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_bank_transfer"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/txtBankTransfer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bank Transfer"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="18sp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginStart="15dp"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/icBankTransfer"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardGooglePay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="#F3F4F8"
+                    android:outlineProvider="none"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/cardBankTransfer">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/icGooglePay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_google_pay"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/txtGooglePay"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Google Pay/QR Code"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textSize="18sp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginStart="15dp"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/icGooglePay"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnContinue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/button_round_back"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Start Free Trial"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardGooglePay"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

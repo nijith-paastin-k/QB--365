@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/round_corner_background"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginBottom="15dp">
+
+    <TextView
+        android:id="@+id/tvCBSE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CBSE"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#000000"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvOrderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12th Std Physics"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvCBSE"
+        app:layout_constraintStart_toStartOf="@id/tvCBSE"/>
+
+    <TextView
+        android:id="@+id/tvValidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Validity: 90 Days"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="#777986"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@id/tvOrderName"
+        app:layout_constraintStart_toStartOf="@id/tvOrderName"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18 June 2022"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#777986"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1250 INR"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDate"
+        app:layout_constraintEnd_toEndOf="@id/tvDate"/>
+
+    <TextView
+        android:id="@+id/tvPayVia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay via Google pay"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="#777986"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+        app:layout_constraintEnd_toEndOf="@id/tvDate"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

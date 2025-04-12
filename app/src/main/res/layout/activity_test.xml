@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".ui.subject_mode.writeTest.TestActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_clock_timer"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/mainPurple"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFinish"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="29:30" />
+
+        <TextView
+            android:id="@+id/tvFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/border_background"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="30dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="8dp"
+            android:text="@string/finish"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvQuestionOf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_vertical"
+            android:textColor="@color/dark_gray"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFinish"
+            tools:text="1 of 30" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_marginTop="5dp"
+            android:background="#C5C5C5"
+            app:layout_constraintTop_toBottomOf="@id/tvQuestionOf" />
+
+        <TextView
+            android:id="@+id/tvQuestionCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:text="Question 1" />
+        <TextView
+            android:id="@+id/bookmarknow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preview"
+            android:padding="8dp"
+            android:background="@drawable/green_background"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"/>
+
+        <io.github.kexanie.library.MathView
+            android:id="@+id/tvQuestion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:lineSpacingExtra="5dp"
+            app:engine="MathJax"
+            android:textColor="@color/dark_gray"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvQuestionCount"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuestionCount"
+            tools:text="@string/dummy_question" />
+
+        <RelativeLayout
+            android:id="@+id/rlA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/round_corner_background"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvQuestion"
+            app:layout_constraintStart_toStartOf="@+id/tvQuestion"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuestion">
+
+            <io.github.kexanie.library.MathView
+                android:id="@+id/tvOptionA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                app:engine="MathJax"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp"
+                tools:text="TextView" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/round_corner_background"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvQuestion"
+            app:layout_constraintStart_toStartOf="@+id/tvQuestion"
+            app:layout_constraintTop_toBottomOf="@+id/rlA">
+
+
+            <io.github.kexanie.library.MathView
+                android:id="@+id/tvOptionB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp"
+                app:engine="MathJax"
+                tools:text="TextView" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/round_corner_background"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvQuestion"
+            app:layout_constraintStart_toStartOf="@+id/tvQuestion"
+            app:layout_constraintTop_toBottomOf="@+id/rlB">
+
+            <io.github.kexanie.library.MathView
+                android:id="@+id/tvOptionC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp"
+                app:engine="MathJax"
+                tools:text="TextView" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/round_corner_background"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvQuestion"
+            app:layout_constraintStart_toStartOf="@+id/tvQuestion"
+            app:layout_constraintTop_toBottomOf="@+id/rlC">
+
+            <io.github.kexanie.library.MathView
+                android:id="@+id/tvOptionD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_background"
+                android:fontFamily="@font/poppins_regular"
+                android:padding="15dp"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp"
+                app:engine="MathJax"
+                tools:text="TextView" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rlD"
+            app:layout_constraintVertical_bias="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPrevious"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_button_background_purple"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/previous"
+                android:textAllCaps="false"
+                android:textColor="@color/mainPurple"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_round_back"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_curve_background"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/queLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/questions"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/queCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="30 Questions"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/queLabel" />
+
+    <LinearLayout
+        android:id="@+id/llIndication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/queCount">
+
+        <TextView
+            android:id="@+id/tvAttempted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/question_indication"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/light_gray"
+            android:textSize="14sp"
+            tools:text="4 attempted" />
+
+        <TextView
+            android:id="@+id/tvSkiped"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:drawableStart="@drawable/question_indication"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/red"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/light_gray"
+            android:textSize="14sp"
+            tools:text="4 attempted" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llIndication"
+        app:layout_constraintTop_toBottomOf="@id/queCount">
+
+        <TextView
+            android:id="@+id/tvRevised"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/question_indication"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/orange"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/light_gray"
+            android:textSize="14sp"
+            tools:text="4 attempted" />
+
+        <TextView
+            android:id="@+id/tvNotAttempt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/question_indication_white"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/light_gray"
+            android:textSize="14sp"
+            tools:text="4 attempted" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvQuestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/llIndication"
+        app:spanCount="5"
+        tools:listitem="@layout/rv_question_indicator_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
